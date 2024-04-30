@@ -24,4 +24,13 @@ Implement basic features like attaching files and formatting text.
 ## Technologies-
 
 Java for application development, JavaMail API for email functionality.
+
+# ScreenShot
+
+![Screenshot (181)](https://github.com/Prithvi1713/Email_Client_Software/assets/146122339/7cefb522-6a4b-4cff-8cc6-c5f8b2b108c0)
+
+# Video
+
+https://github.com/Prithvi1713/Email_Client_Software/assets/146122339/29634eb1-4098-4285-8019-6355dc4c5738
+
  
