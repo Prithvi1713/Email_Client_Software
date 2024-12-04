@@ -1,0 +1,89 @@
+
+assignment - 1
+hkcoders GitHub account use
+*/5 ****
+5 ****
+
+assignement - 3
+
+create instance of 15 GB storage 
+install ansible 
+copy .pem file from local machine to remote machine using scp 
+create inventory file in /etc/ansible sudo vim hosts
+verify connection  (ansible production -m ping )
+
+
+
+
+--	ansible production -m apt -a "name=openjdk-17-jdk state=present" -b
+	ansible all -m command -a "java -version"
+--	ansible production -m setup -a "filter=ansible_facts" -v
+ansible production -m setup -a "filter=ansible_user,ansible_uptime,processor,ansible_mounts,memfree,memtotal" -v
+
+--	ansible-inventory --list
+--	ansible-inventory --vars
+--	ansible all -m command -a "which git"
+--	ansible 'production & development' -m command -a "which git"
+--	ansible 'production:!development' -m command -a "which git"
+
+
+
+
+
+Assignment - 4
+
+we need 4 instance create for assignmeent 4
+
+--	create 4 instance of tc-small with 15 gb storage
+--	install ansible (https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html#installing-ansible-on-ubuntu)
+--	sudo vim /etc/ansible/hosts
+--	create 
+	[production]
+	server1 ansible_host=192.168.1.10
+	server2 ansible_host=192.168.1.11
+ 
+	[production:vars]
+	ansible_user=your_ssh_user
+	ansible_ssh_private_key_file=/path/to/your/private_key.pem 
+
+--	open gitbash from download  path and run command
+	chmod 400 .pem
+	scp -i file.pem /path/of/ssh/key/file.pem ubuntu@ip_address:destincation/path
+
+--	copy file path and at hosts file
+
+--	ansible production -m ping 
+--	mkdir ansible/myinventory/firstinventory
+--	vim date.yml
+--	ansible-playbook -v date.yml
+--	
+
+
+
+
+
+
+
+
+
+
+
+ 
+-- 
+assignement - 5
+
+--	create instance t2micro and 20 gb
+--	connect instace  in download path
+--	install docker  in machine (https://docs.docker.com/engine/install/ubuntu/)
+--	install kubctl (https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)
+--	install minikube (https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Farm64%2Fstable%2Fdebian+package) --> Linux --> x86-64-->stable --> Debian package
+--	minikube start --> copy command for user group --> edit username write username ubuntu --> minikube start
+-- 	kubectl create deployment hello-minikube --image-kibase/echo-server:1.0
+	kubectl expose deployment hello-minikube --type=NodePort --port=8080
+--	kubectl get services hello-minikube
+--	minikube service hello-minikube
+--	kubectl port-forward service/hello-minikube 7080:8080
+--	minikube stop 
+	minikube config set memory 9001
+--	minikube stop
+
